@@ -6,10 +6,14 @@ public class Main {
         System.out.print("Введите расстояние Вашей поездки в км.: ");
         int distance = input.nextInt();
         System.out.println("Расстояние Вашей поездки: " + distance + " км.");
-        int amount = distance * 20 + 60;
+        int costKilometer = 20;
+        int costBoarding = 60;
+        int amount = distance * costKilometer + costBoarding;
         int i = 100;
-        int sale = amount * 5 / i;
-        if (amount <= 1000) {
+        int discountRate = 5;
+        int sale = amount * discountRate / i;
+        int priceBorder = 1000;
+        if (amount <= priceBorder) {
             System.out.println("Стоимость Вашей поездки: " + amount + " руб.");
         } else if (sale < i) {
             int amount2 = amount - sale;
