@@ -9,20 +9,23 @@ public class Main {
         int costKilometer = 20;
         int costBoarding = 60;
         int amount = distance * costKilometer + costBoarding;
-        int i = 100;
+        int divider = 100;
         int discountRate = 5;
-        int sale = amount * discountRate / i;
+        int sale = amount * discountRate / divider;
         int priceBorder = 1000;
         if (amount <= priceBorder) {
             System.out.println("Стоимость Вашей поездки: " + amount + " руб.");
-        } else if (sale < i) {
-            int amount2 = amount - sale;
-            System.out.println("Стоимость Вашей поездки: " + amount2 + " руб.");
-            System.out.println("Скидка составила: " + sale + " руб.");
         } else {
-            int amount3 = amount - i;
-            System.out.println("Стоимость Вашей поездки: " + amount3 + " руб.");
-            System.out.println("Скидка составила: 100 руб.");
+            int discountLimit = 100;
+            if (sale < discountLimit) {
+                int amount2 = amount - sale;
+                System.out.println("Стоимость Вашей поездки: " + amount2 + " руб.");
+                System.out.println("Скидка составила: " + sale + " руб.");
+            } else {
+                int amount3 = amount - discountLimit;
+                System.out.println("Стоимость Вашей поездки: " + amount3 + " руб.");
+                System.out.println("Скидка составила: 100 руб.");
+            }
         }
     }
 }
