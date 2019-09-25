@@ -8,22 +8,22 @@ public class Main {
         System.out.println("Расстояние Вашей поездки: " + distance + " км.");
         int costKilometer = 20;
         int costBoarding = 60;
-        int amount = distance * costKilometer + costBoarding;
+        int price = distance * costKilometer + costBoarding;
         int divider = 100;
         int discountRate = 5;
-        int sale = amount * discountRate / divider;
+        int discount = price * discountRate / divider;
         int priceBorder = 1000;
-        if (amount <= priceBorder) {
-            System.out.println("Стоимость Вашей поездки: " + amount + " руб.");
+        if (price <= priceBorder) {
+            System.out.println("Стоимость Вашей поездки: " + price + " руб.");
         } else {
             int discountLimit = 100;
-            if (sale < discountLimit) {
-                int amount2 = amount - sale;
-                System.out.println("Стоимость Вашей поездки: " + amount2 + " руб.");
-                System.out.println("Скидка составила: " + sale + " руб.");
+            if (discount < discountLimit) {
+                int discountPrice = price - discount;
+                System.out.println("Стоимость Вашей поездки: " + discountPrice + " руб.");
+                System.out.println("Скидка составила: " + discount + " руб.");
             } else {
-                int amount3 = amount - discountLimit;
-                System.out.println("Стоимость Вашей поездки: " + amount3 + " руб.");
+                int maxDiscountPrice = price - discountLimit;
+                System.out.println("Стоимость Вашей поездки: " + maxDiscountPrice + " руб.");
                 System.out.println("Скидка составила: 100 руб.");
             }
         }
